@@ -1,8 +1,9 @@
-import { Welcome } from "./components/home";
+import { Welcome, ImagesRemembers } from "./components/home";
 function App() {
   return (
     <div>
       <Welcome />
+      <ImagesRemembers />
     </div>
   );
 }

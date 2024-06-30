@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from "react";
-import image1 from "../../../assets/image1.jpeg";
 import {
   differenceInYears,
   differenceInMonths,
@@ -48,9 +47,11 @@ const AgeCounter: React.FC<AgeCounterProps> = ({ startDate }) => {
   }, [startDate]);
 
   return (
-    <div className="text-2xl text-blue-700 font-serif">
-      {years > 0 && `${years} años, `}
-      {months} meses, {days} días
+    <div>
+      <div className="font-serif text-4xl text-blue-700">
+        {years > 0 && `${years} años, `}
+        {months} meses, {days} días
+      </div>
     </div>
   );
 };
@@ -58,17 +59,12 @@ const AgeCounter: React.FC<AgeCounterProps> = ({ startDate }) => {
 export const Welcome: FC<WelcomeProps> = () => {
   return (
     <div className="flex flex-col gap-8 bg-blue-50 justify-center items-center h-[60vh] text-center">
-      <p className="font-serif text-4xl">
-        Esta página fue diseñada con mucho amor para ti
-      </p>
       <p className="font-serif text-4xl">Tiempo que vamos juntos</p>
       <p className="font-extralight text-xl">
         <AgeCounter startDate="2023-08-25" />
       </p>
-      <img
-        src={image1}
-        className="w-[200px] h-[200px] rounded-full grow-0 shrink-0"
-      />
+      <p className="font-serif text-2xl">Y espero que sean mucho más</p>
+      <p className="font-bold text-2xl">Te Quiero</p>
     </div>
   );
 };
