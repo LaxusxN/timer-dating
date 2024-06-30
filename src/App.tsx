@@ -1,9 +1,10 @@
-import { Welcome, ImagesRemembers } from "./components/home";
+import { Welcome, ImagesRemembers, VideosRemembers } from "./components/home";
 function App() {
   return (
     <div>
       <Welcome />
       <ImagesRemembers />
+      <VideosRemembers />
     </div>
   );
 }

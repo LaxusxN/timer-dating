@@ -58,13 +58,14 @@ const AgeCounter: React.FC<AgeCounterProps> = ({ startDate }) => {
 
 export const Welcome: FC<WelcomeProps> = () => {
   return (
-    <div className="flex flex-col gap-8 bg-blue-50 justify-center items-center h-[60vh] text-center">
+    <div className="flex flex-col gap-8 bg-red-50 justify-center items-center h-[60vh] text-center">
       <p className="font-serif text-4xl">Tiempo que vamos juntos</p>
       <p className="font-extralight text-xl">
         <AgeCounter startDate="2023-08-25" />
       </p>
       <p className="font-serif text-2xl">Y espero que sean mucho más</p>
       <p className="font-bold text-2xl">Te Quiero</p>
+      <p className="font-bold text-4xl text-red-800">MI MOSHITO!!!</p>
     </div>
   );
 };

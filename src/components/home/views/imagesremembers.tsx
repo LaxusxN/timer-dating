@@ -88,10 +88,10 @@ export const ImagesRemembers: FC<ImagesRemembersProps> = () => {
 
   return (
     <div
-      className="bg-blue-50 h-[90vh] sm:h-[50vh] px-4 sm:px-0 
+      className="bg-blue-50 h-[90vh] sm:h-[50vh] p-8 sm:px-0 
       flex flex-col items-center justify-center"
     >
-      <div className="w-full">
+      <div className="w-full p-8">
         <h1 className="font-bold text-xl text-left p-8 text-blue-700">
           Recuerdos:
         </h1>
