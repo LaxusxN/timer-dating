@@ -1,8 +1,8 @@
-import { FC, useEffect } from "react";
-import SwiperCore from "swiper";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
+import { FC } from "react";
+// import SwiperCore from "swiper";
+// import { Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/swiper-bundle.css";
 import image1 from "../../../assets/image1.jpeg";
 import image2 from "../../../assets/image2.jpeg";
 import image3 from "../../../assets/image3.jpeg";
@@ -71,58 +71,60 @@ const images = [
   },
 ];
 
-SwiperCore.use([Autoplay]);
+// SwiperCore.use([Autoplay]);
 
 export const ImagesRemembers: FC<ImagesRemembersProps> = () => {
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (swiper) {
-        swiper.slideNext();
-      }
-    }, 2500); // Adjust the interval time as needed
-
-    return () => clearInterval(interval);
-  }, []);
-
-  let swiper;
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (swiper) {
+  //       swiper.slideNext();
+  //     }
+  //   }, 2500); // Adjust the interval time as needed
+  //
+  //   return () => clearInterval(interval);
+  // }, []);
+  //
+  // let swiper;
 
   return (
     <div
-      className="bg-blue-50 h-[90vh] sm:h-[50vh] p-8 sm:px-0 
+      className="bg-blue-50 h-[140vh] sm:h-[100vh] p-8 sm:px-0 
       flex flex-col items-center justify-center"
     >
       <div className="w-full p-8">
         <h1 className="font-bold text-xl text-left p-8 text-blue-700">
           Recuerdos:
         </h1>
-        <Swiper
-          loop={true}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          onSwiper={(s) => (swiper = s)}
-          slidesPerView={5} // Mostrar 5 slides a la vez
-          spaceBetween={10}
-        >
+        {/* <Swiper */}
+        {/*   loop={true} */}
+        {/*   autoplay={{ delay: 2500, disableOnInteraction: false }} */}
+        {/*   onSwiper={(s) => (swiper = s)} */}
+        {/*   slidesPerView={5} // Mostrar 5 slides a la vez */}
+        {/*   spaceBetween={10} */}
+        {/* > */}
+        <div className="flex flex-row flex-wrap justify-between gap-8">
           {images.map((index) => (
-            <SwiperSlide key={index.id}>
-              <div className="flex  flex-col items-center gap-4">
-                {index.id < 15 ? (
-                  <img
-                    src={index.image}
-                    style={{
-                      color: "#000000",
-                      height: 300,
-                      cursor: "pointer",
-                      borderRadius: "50%",
-                    }}
-                  />
-                ) : (
-                  <img src={index.image} className="h-[300px] rounded-sm" />
-                )}
-                <h1>{index.title}</h1>
-              </div>
-            </SwiperSlide>
+            <div className="flex  flex-col items-center gap-8">
+              {index.id < 15 ? (
+                <img
+                  src={index.image}
+                  style={{
+                    color: "#000000",
+                    height: 300,
+                    width: 300,
+                    cursor: "pointer",
+                    borderRadius: "50%",
+                  }}
+                />
+              ) : (
+                <img src={index.image} className="h-[300px] rounded-sm" />
+              )}
+              <h1>{index.title}</h1>
+            </div>
+            // </SwiperSlide>
           ))}
-        </Swiper>
+        </div>
+        {/* </Swiper> */}
       </div>
     </div>
   );
